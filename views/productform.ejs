@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Termékek regisztrálása</title>
+</head>
+<body>
+    <h1>Új termék</h1>
+    <form method="post">
+        <label>Serial number: <br>
+            <input type="text" name="serial_number">
+        </label>
+        <label>Condition: <br>
+            <input type="text" name="condition">
+        </label>
+        <label>Name: <br>
+            <input type="text" name="name">
+        </label>
+        <% 
+            errors.forEach((msg) => { %>
+                <p class="errorMessage"><%= msg %></p>
+            <% }); %>
+        <button type="submit">Felvétel</button>
+    </form>
+</body>
+</html>
