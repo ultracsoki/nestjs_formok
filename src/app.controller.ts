@@ -3,7 +3,7 @@ import { AppService } from './app.service';
 import { RegistrationDto } from './registration.dto';
 import { error } from 'console';
 import { User } from './user';
-import { Response } from 'express';
+import e, { Response } from 'express';
 import { ProductRegistration } from './product.dto';
 import { Product } from './product';
 
@@ -88,11 +88,12 @@ export class AppController {
       errors.push('A termék nevének hosszabbnak kell lennie mint 3 karakter.')
     }
     if(errors.length > 0) {
+      
       return {
         errors,
       };
     } else {
-      products.push(new Product(registration.serial_number,registration.condition,registration.name))
+      products.push(new Product(registration.serial_number,registration.condition,registration.name));
       console.log(products);
       res.redirect('/product');
     }

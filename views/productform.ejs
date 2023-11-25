@@ -8,21 +8,23 @@
 </head>
 <body>
     <h1>Új termék</h1>
-    <form method="post">
+    <form method="post" id="form">
         <label>Serial number: <br>
-            <input type="text" name="serial_number">
+            <input type="text" name="serial_number" id="inputSerialNumber">
         </label>
         <label>Condition: <br>
-            <input type="text" name="condition">
+            <input type="text" name="condition" id="inputCondition">
         </label>
         <label>Name: <br>
-            <input type="text" name="name">
+            <input type="text" name="name" id="inputName">
         </label>
         <% 
             errors.forEach((msg) => { %>
                 <p class="errorMessage"><%= msg %></p>
             <% }); %>
-        <button type="submit">Felvétel</button>
+        <button type="submit" id="buttonFelvetel">Felvétel</button>
     </form>
+    <p id="hibaUzenet"></p>
+    <script src="script.js"></script>
 </body>
 </html>
